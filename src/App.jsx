@@ -1,5 +1,5 @@
 // import './App.css'
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import Bakrey from './bakrey'
 import IconHandler from './IconHandler'
 import Deals from './deals'
