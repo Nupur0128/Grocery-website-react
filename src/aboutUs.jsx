@@ -49,7 +49,7 @@ export default function AboutUs() {
                         Whether you're a customer or a partner, we’d love to hear from you.
                     </p>
                     <Link
-                        to="/contact"
+                        to="/customerSupport"
                         className="inline-block bg-red-600 text-white px-6 py-2 rounded-md hover:bg-red-700 transition"
                     >
                         Contact Us

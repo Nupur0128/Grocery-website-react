@@ -27,14 +27,14 @@ export default function MyOrder() {
     ];
 
     const mostPopularItem = [
-        { img: "/mostPopu1.png", btn: "Vegetables" },
-        { img: "/mostPopu2.png", btn: "Bakery" },
-        { img: "/mostPopu3.png", btn: "Wine" },
-        { img: "/mostPopu4.png", btn: "Dairy & Eggs" },
-        { img: "/mostPopu5.png", btn: "Meat & Poultry" },
-        { img: "/mostPopu6.png", btn: "Soft Drinks" },
-        { img: "/mostPopu7.png", btn: "Cleaning Supplies" },
-        { img: "/mostPopu8.png", btn: "Cereal & Snacks" },
+        { img: "/mostPopu1.png", btn: "Vegetables", link: "/Food/Vegetable" },
+        { img: "/mostPopu2.png", btn: "Bakery", link: "/Food/Bakrey" },
+        { img: "/mostPopu3.png", btn: "Wine", link: "/Beverages/Wine" },
+        { img: "/mostPopu4.png", btn: "Dairy & Eggs", link: "" },
+        { img: "/mostPopu5.png", btn: "Meat & Poultry", link: "/Food/Meat-Poultry" },
+        { img: "/mostPopu6.png", btn: "Soft Drinks", link: "" },
+        { img: "/mostPopu7.png", btn: "Cleaning Supplies", link: "" },
+        { img: "/mostPopu8.png", btn: "Cereal & Snacks", link: "" },
     ];
 
     return (
@@ -139,22 +139,24 @@ export default function MyOrder() {
                 </h1>
                 <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6">
                     {mostPopularItem.map((item, index) => (
-                        <div
-                            key={index}
-                            className="flex flex-col items-center border rounded-lg p-4 hover:shadow-md transition"
-                        >
-                            <img
-                                src={item.img}
-                                alt={item.btn}
-                                className="w-24 h-24 object-contain mb-4"
-                            />
-                            <Link
-                                to={`/${item.btn.toLowerCase().replace(/\s+/g, "-")}`}
-                                className="font-medium text-lg hover:text-red-600"
+                        <Link to={item.link}>
+                            <div
+                                key={index}
+                                className="flex flex-col items-center border rounded-lg p-4 hover:shadow-md transition"
                             >
-                                {item.btn}
-                            </Link>
-                        </div>
+                                <img
+                                    src={item.img}
+                                    alt={item.btn}
+                                    className="w-24 h-24 object-contain mb-4"
+                                />
+                                <Link
+                                    to={`/${item.btn.toLowerCase().replace(/\s+/g, "-")}`}
+                                    className="font-medium text-lg hover:text-red-600"
+                                >
+                                    {item.btn}
+                                </Link>
+                            </div>
+                        </Link>
                     ))}
                 </div>
             </section>
